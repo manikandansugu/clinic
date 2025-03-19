@@ -2,198 +2,454 @@
 <html lang="en">
   <head>
     <title>AADHIKESAV CANCER CENTRE</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
- 
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css" />
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="css/jquery.timepicker.css" />
+
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .galleryContainer1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+      .gallerySection1 {
+        width: 90%;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        text-align: center;
+      }
+      .gallerySection1 h3 {
+        color: #333;
+        padding: 10px;
+        text-align: center;
+      }
+      .galleryImages1,
+      .galleryVideos1 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      .galleryItem {
+        position: relative;
+      }
+      .galleryItem img,
+      .galleryItem iframe {
+        width: 100%;
+        height: 250px;
+        display: block;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+      .caption {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .galleryItem:hover .caption {
+        opacity: 1;
+      }
+      .button-container {
+        margin: 20px;
+        text-align: center;
+      }
+      .button-container button {
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .top-wrap .text span {
+        word-wrap: break-word;
+        word-break: break-word;
+      }
+
+      @media (max-width: 768px) {
+        .galleryImages1,
+        .galleryVideos1 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .galleryItem img,
+        .galleryItem iframe {
+          height: 200px;
+        }
+
+        .button-container button {
+          padding: 8px 16px;
+          font-size: 14px;
+        }
+
+        .gallerySection1 {
+          width: 100%;
+          padding: 5px;
+        }
+
+        .top-wrap .text span {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+
+        .navbar-brand img {
+          height: 80px;
+        }
+
+        .button-container {
+          flex-direction: column;
+        }
+
+        .button-container button {
+          width: 100%;
+          margin: 10px 0;
+        }
+        .beand_id {
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .galleryImages1,
+        .galleryVideos1 {
+          grid-template-columns: 1fr;
+        }
+
+        .galleryItem img,
+        .galleryItem iframe {
+          height: 150px;
+        }
+
+        .button-container button {
+          padding: 6px 12px;
+          font-size: 12px;
+        }
+
+        .gallerySection1 h3 {
+          font-size: 18px;
+        }
+
+        .top-wrap .text span {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+
+        .navbar-brand img {
+          height: 60px;
+        }
+
+        .button-container button {
+          font-size: 14px;
+          padding: 8px;
+        }
+        .beand_id {
+          font-size: 14px;
+        }
+      }
+    </style>
+    <script>
+      function showSection(section) {
+        if (section === "Images1") {
+          document.querySelector(".galleryImages1").style.display = "grid";
+          document.querySelector(".galleryVideos1").style.display = "none";
+        } else if (section === "Videos1") {
+          document.querySelector(".galleryImages1").style.display = "none";
+          document.querySelector(".galleryVideos1").style.display = "grid";
+        }
+      }
+    </script>
   </head>
   <body>
-	<div class="wrap">
-	    <div class="container">
-				<div  class="row flex-wrap justify-content-between align-items-center">
-					<div class="col-md-3 mb-md-0 mb-4 d-flex align-items-center">
-						<a class="navbar-brand text-center" href="index.html"><img src="images/clinic-logo.png" alt="Clinic Logo" style="height: 100px; width: auto; margin-right: auto;">Aadhikesav Cancer Clinic</a>
-					</div>
-					<div class="col-md-7">
-						<div class="row">
-							<div class="col-md-8 mb-md-0 mb-3">
-								<div class="top-wrap d-flex">
-									<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-location-arrow"></span></div>
-									<div class="text"><span>Address</span><span>Opp to Tenkasi New Bus Stand, Near Royal Hyper Super Market, Tenkasi 627811.</span></div>
-								</div>
-							</div>
-							<div class="col">
-								<div class="top-wrap d-flex">
-									<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-phone"></span></div>
-									<div class="text"><span>Call us</span><span>(+91) 96292 23588</span><span>(+91) 74185 31363</span></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="fa fa-bars"></span> Menu
-	      </button>
-				<div class="order-lg-last">
+    <div class="wrap">
+      <div class="container">
+        <div class="row flex-wrap justify-content-between align-items-center">
+          <div class="col-md-3 mb-md-0 mb-4 d-flex align-items-center">
+            <a class="navbar-brand text-center beand_id" href="index.html"
+              ><img
+                src="images/clinic-logo.png"
+                alt="Clinic Logo"
+                style="height: 100px; width: auto; margin-right: auto"
+              />Aadhikesav Cancer Centre</a
+            >
+          </div>
+          <div class="col-md-7">
+            <div class="row">
+              <div class="col-md-8 mb-md-0 mb-3">
+                <div class="top-wrap d-flex">
+                  <div
+                    class="icon d-flex align-items-center justify-content-center"
+                  >
+                    <span class="fa fa-location-arrow"></span>
+                  </div>
+                  <div class="text">
+                    <span>Address</span
+                    ><span
+                      >Opp to Tenkasi New Bus Stand, Near Royal Hyper Super
+                      Market, Tenkasi 627811.</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="top-wrap d-flex">
+                  <div
+                    class="icon d-flex align-items-center justify-content-center"
+                  >
+                    <span class="fa fa-phone"></span>
+                  </div>
+                  <div class="text">
+                    <span>Call us</span><span>(+91) 96292 23588</span
+                    ><span>(+91) 74185 31363</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+      id="ftco-navbar"
+    >
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#ftco-nav"
+          aria-controls="ftco-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="fa fa-bars"></span> Menu
+        </button>
+        <div class="order-lg-last">
           <a href="#appoin" class="btn btn-primary">Make an appointment</a>
         </div>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="team.html" class="nav-link">Biography</a></li>
-	        	<li class="nav-item"><a href="services.html" class="nav-link">Treatments</a></li>
-	        	<li class="nav-item"><a href="department.html" class="nav-link">Testimonial</a></li>
-	        	<li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-	        	<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-    <!-- END nav -->
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="team.html" class="nav-link">Biography</a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link">Treatments</a>
+            </li>
+            <li class="nav-item">
+              <a href="department.html" class="nav-link">Testimonial</a>
+            </li>
+            <li class="nav-item">
+              <a href="gallery.html" class="nav-link">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a href="blog.html" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="hero-wrap hero-wrap-2"
+      style="background-image: url('images/bg_2.jpg')"
+      data-stellar-background-ratio="0.5"
+    >
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-end">
           <div class="col-md-9 ftco-animate pb-5">
-          	<p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Gallery <i class="fa fa-chevron-right"></i></span></p>
+            <p class="breadcrumbs mb-2">
+              <span class="mr-2"
+                ><a href="index.html"
+                  >Home <i class="fa fa-chevron-right"></i></a
+              ></span>
+              <span>Gallery <i class="fa fa-chevron-right"></i></span>
+            </p>
             <h1 class="mb-0 bread">Gallery</h1>
           </div>
         </div>
       </div>
     </section>
-		
-		<section class="ftco-section ftco-no-pt ftco-no-pb">
-			<div class="container-fluid px-md-0">
-				<div class="row no-gutters">
-          <div class="col-md-3 ftco-animate">
-            <div class="work img d-flex align-items-center" style="background-image: url(images/work-1.jpg);">
-            	<a href="images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="work-single.html">Foot Pain</a></h2>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <div class="work img d-flex align-items-center" style="background-image: url(images/work-2.jpg);">
-            	<a href="images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="work-single.html">Arm Pain</a></h2>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <div class="work img d-flex align-items-center" style="background-image: url(images/work-3.jpg);">
-            	<a href="images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="work-single.html">Shoulder Pain</a></h2>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <div class="work img d-flex align-items-center" style="background-image: url(images/work-4.jpg);">
-            	<a href="images/work-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="work-single.html">Back Pain</a></h2>
-	              </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-md-3 ftco-animate">
-            <div class="work img d-flex align-items-center" style="background-image: url(images/work-5.jpg);">
-            	<a href="images/work-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="work-single.html">Head &amp; Migraines</a></h2>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <div class="work img d-flex align-items-center" style="background-image: url(images/work-6.jpg);">
-            	<a href="images/work-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="work-single.html">Wear &amp; Tear</a></h2>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <div class="work img d-flex align-items-center" style="background-image: url(images/work-7.jpg);">
-            	<a href="images/work-7.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="work-single.html">Arm Pain</a></h2>
-	              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 ftco-animate">
-            <div class="work img d-flex align-items-center" style="background-image: url(images/work-8.jpg);">
-            	<a href="images/work-8.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="fa fa-expand"></span>
-	    				</a>
-            	<div class="desc w-100 px-4 text-center pt-5 mt-5">
-	              <div class="text w-100 mb-3 mt-4">
-	              	<h2><a href="work-single.html">Lower Back Pain</a></h2>
-	              </div>
-              </div>
-            </div>
-          </div>
+    <center><h1>GALLERY</h1></center>
+
+    <div class="button-container">
+      <button onclick="showSection('Images1')">Images</button>
+      <button onclick="showSection('Videos1')">Videos</button>
+    </div>
+
+    <div class="galleryContainer1">
+      <!-- Image Gallery Section -->
+      <div class="gallerySection1 galleryImages1">
+        <h3>Images</h3>
+        <div class="galleryItem">
+          <img src="images/image_1.jpg" alt="Sample Image 1" />
+          <div class="caption">Sample Image 1</div>
         </div>
-			</div>
-		</section>	
+        <div class="galleryItem">
+          <img src="images/image_2.jpg" alt="Sample Image 2" />
+          <div class="caption">Sample Image 2</div>
+        </div>
+        <div class="galleryItem">
+          <img src="images/image_3.jpg" alt="Sample Image 3" />
+          <div class="caption">Sample Image 3</div>
+        </div>
+        <div class="galleryItem">
+          <img src="images/image_4.jpg" alt="Sample Image 4" />
+          <div class="caption">Sample Image 4</div>
+        </div>
+        <div class="galleryItem">
+          <img src="images/image_5.jpg" alt="Sample Image 5" />
+          <div class="caption">Sample Image 5</div>
+        </div>
+        <div class="galleryItem">
+          <img src="images/image_6.jpg" alt="Sample Image 6" />
+          <div class="caption">Sample Image 6</div>
+        </div>
+        <div class="galleryItem">
+          <img src="images/image_7.jpg" alt="Sample Image 7" />
+          <div class="caption">Sample Image 7</div>
+        </div>
+        <div class="galleryItem">
+          <img src="images/image_8.jpg" alt="Sample Image 8" />
+          <div class="caption">Sample Image 8</div>
+        </div>
+      </div>
+
+      <!-- Video Gallery Section -->
+      <div class="gallerySection1 galleryVideos1">
+        <h3>Videos</h3>
+        <div class="galleryItem">
+          <iframe
+            src="https://www.youtube.com/embed/video_1"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <div class="caption">Sample Video 1</div>
+        </div>
+        <div class="galleryItem">
+          <iframe
+            src="https://www.youtube.com/embed/video_2"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <div class="caption">Sample Video 2</div>
+        </div>
+        <div class="galleryItem">
+          <iframe
+            src="https://www.youtube.com/embed/video_3"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <div class="caption">Sample Video 3</div>
+        </div>
+        <div class="galleryItem">
+          <iframe
+            src="https://www.youtube.com/embed/video_4"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <div class="caption">Sample Video 4</div>
+        </div>
+        <div class="galleryItem">
+          <iframe
+            src="https://www.youtube.com/embed/video_5"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <div class="caption">Sample Video 5</div>
+        </div>
+        <div class="galleryItem">
+          <iframe
+            src="https://www.youtube.com/embed/video_6"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <div class="caption">Sample Video 6</div>
+        </div>
+        <div class="galleryItem">
+          <iframe
+            src="https://www.youtube.com/embed/video_7"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <div class="caption">Sample Video 7</div>
+        </div>
+        <div class="galleryItem">
+          <iframe
+            src="https://www.youtube.com/embed/video_8"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          <div class="caption">Sample Video 8</div>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer ftco-section ftco-no-pt">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-6 col-lg">
             <div class="ftco-footer-widget py-4 py-md-5">
-              <a href="#" style="font-size: 20px; font-weight: 700;" class="text-light">Aadhikesav Cancer Clinic</a>
-				<img src="images/clinic-logo.png" alt="Clinic Logo" style="height: 100px; width: auto; margin-left: 20%;">
-				<P>Aadhikesav Cancer Centre provides exceptional care with expert doctors, advanced treatments, and compassionate staff. Their patient-first approach ensures comfort, faster recovery, and hope for every individual.</P>
+              <a
+                href="#"
+                style="font-size: 20px; font-weight: 700"
+                class="text-light"
+                >Aadhikesav Cancer Clinic</a
+              >
+              <img
+                src="images/clinic-logo.png"
+                alt="Clinic Logo"
+                style="height: 100px; width: auto; margin-left: 20%"
+              />
+              <p>
+                Aadhikesav Cancer Centre provides exceptional care with expert
+                doctors, advanced treatments, and compassionate staff. Their
+                patient-first approach ensures comfort, faster recovery, and
+                hope for every individual.
+              </p>
               <!-- <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-4">
                 <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -205,76 +461,146 @@
             <div class="ftco-footer-widget ml-md-5 py-5">
               <h2 class="ftco-heading-2">Quick Links</h2>
               <ul class="list-unstyled">
-                <li><a href="about.html" class="py-1 d-block"><span class="fa fa-check mr-3"></span>ABOUT</a></li>
-                <li><a href="biography.html" class="py-1 d-block"><span class="fa fa-check mr-3"></span>BIOGRAPHY</a></li>
-                <li><a href="treatments.html" class="py-1 d-block"><span class="fa fa-check mr-3"></span>TREATMENTS</a></li>
-                <li><a href="testimonial.html" class="py-1 d-block"><span class="fa fa-check mr-3"></span>TESTIMONIAL</a></li>
-                <li><a href="gallery.html" class="py-1 d-block"><span class="fa fa-check mr-3"></span>GALLERY</a></li>
-                <li><a href="blog.html" class="py-1 d-block"><span class="fa fa-check mr-3"></span>BLOG</a></li>
+                <li>
+                  <a href="about.html" class="py-1 d-block"
+                    ><span class="fa fa-check mr-3"></span>ABOUT</a
+                  >
+                </li>
+                <li>
+                  <a href="biography.html" class="py-1 d-block"
+                    ><span class="fa fa-check mr-3"></span>BIOGRAPHY</a
+                  >
+                </li>
+                <li>
+                  <a href="treatments.html" class="py-1 d-block"
+                    ><span class="fa fa-check mr-3"></span>TREATMENTS</a
+                  >
+                </li>
+                <li>
+                  <a href="testimonial.html" class="py-1 d-block"
+                    ><span class="fa fa-check mr-3"></span>TESTIMONIAL</a
+                  >
+                </li>
+                <li>
+                  <a href="gallery.html" class="py-1 d-block"
+                    ><span class="fa fa-check mr-3"></span>GALLERY</a
+                  >
+                </li>
+                <li>
+                  <a href="blog.html" class="py-1 d-block"
+                    ><span class="fa fa-check mr-3"></span>BLOG</a
+                  >
+                </li>
               </ul>
             </div>
-          </div>f
+          </div>
+          f
           <div class="col-md-6 col-lg">
             <div class="ftco-footer-widget py-4 py-md-5">
-            	<h2 class="ftco-heading-2">Contact information</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon fa fa-map-marker"></span><span class="text">Opp to Tenkasi New Bus Stand, Near Royal Hyper Super Market, Tenkasi - 627811.</span></li>
-	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">(+91) 96292 23588, 74185 31363</span></a></li>
-	                <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">aadhikesavcancercentertsi@gmail.com</span></a></li>
-	              </ul>
-	            </div>
+              <h2 class="ftco-heading-2">Contact information</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li>
+                    <span class="icon fa fa-map-marker"></span
+                    ><span class="text"
+                      >Opp to Tenkasi New Bus Stand, Near Royal Hyper Super
+                      Market, Tenkasi - 627811.</span
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><span class="icon fa fa-phone"></span
+                      ><span class="text"
+                        >(+91) 96292 23588, 74185 31363</span
+                      ></a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><span class="icon fa fa-paper-plane"></span
+                      ><span class="text"
+                        >aadhikesavcancercentertsi@gmail.com</span
+                      ></a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="col-md-6 col-lg">
-             <div class="ftco-footer-widget bg-primary p-4 py-5">
-				<h2>MEET THE DOCTOR</h2>
-				<div class="opening-hours">
-					<h4>Working Days:</h4>
-					<p class="pl-3">
-						<strong>Thursday – Sunday:</strong> 
-							 </p>
-					<h4>Consulting Time:</h4>
-					<p class="pl-3">
-						<span>From 1:00 PM to 4:00 PM</span>
-						</p>
-				</div>
+            <div class="ftco-footer-widget bg-primary p-4 py-5">
+              <h2>MEET THE DOCTOR</h2>
+              <div class="opening-hours">
+                <h4>Working Days:</h4>
+                <p class="pl-3">
+                  <strong>Thursday – Sunday:</strong>
+                </p>
+                <h4>Consulting Time:</h4>
+                <p class="pl-3">
+                  <span>From 1:00 PM to 4:00 PM</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
-
-            <p style="text-align: center;"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved   by <a href="https://techytoper.com" target="_blank">Techy Toper</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p style="text-align: center">
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              All rights reserved by
+              <a href="https://techytoper.com" target="_blank">Techy Toper</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
           </div>
         </div>
       </div>
     </footer>
-    
-  
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle
+          class="path-bg"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke="#eeeeee"
+        />
+        <circle
+          class="path"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke-miterlimit="10"
+          stroke="#F96D00"
+        />
+      </svg>
+    </div>
 
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/nav.js"></script>
   </body>
 </html>
